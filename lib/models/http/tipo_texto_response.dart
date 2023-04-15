@@ -1,17 +1,15 @@
+import '../tipo_texto.dart';
 
+class TipoTextoResponse {
+  List<TipoTexto>? data;
 
-import '../texto.dart';
+  TipoTextoResponse({this.data});
 
-class TextosResponse {
-  List<Texto>? data;
-
-  TextosResponse({this.data});
-
-  TextosResponse.fromJson(Map<String, dynamic> json) {
+  TipoTextoResponse.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
-      data = <Texto>[];
+      data = <TipoTexto>[];
       json['data'].forEach((v) {
-        data!.add(new Texto.fromJson(v));
+        data!.add(new TipoTexto.fromJson(v));
       });
     }
   }

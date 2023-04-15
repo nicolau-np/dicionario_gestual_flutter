@@ -12,9 +12,9 @@ class TextosProvider extends ChangeNotifier {
   getTextos() async {
     final resp = await CafeApi.httpGet("/textos");
 
-    final textosResp = TextosResponse.fromMap(resp);
+    final textosResp = TextosResponse.fromJson(resp);
 
-    textos = [...textosResp.textos];
+    textos = [...?textosResp.data];
 
     notifyListeners();
   }

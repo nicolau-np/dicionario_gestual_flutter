@@ -1,73 +1,60 @@
-import 'dart:convert';
-
 class Texto {
-  Texto({
-    required this.id,
-    required this.texto,
-    required this.video,
-    required this.img,
-    required this.estado,
-    required this.tipo_texto,
-  });
+  int? id;
+  TipoTexto? tipoTexto;
+  String? texto;
+  String? video;
+  Null? img;
+  String? estado;
 
-  String id;
-  String texto;
-  String video;
-  String img;
-  String estado;
-  _TipoTexto tipo_texto;
+  Texto(
+      {this.id, this.tipoTexto, this.texto, this.video, this.img, this.estado});
 
-  factory Texto.fromJson(String str) => Texto.fromMap(json.decode(str));
+  Texto.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    tipoTexto = json['tipo_texto'] != null
+        ? new TipoTexto.fromJson(json['tipo_texto'])
+        : null;
+    texto = json['texto'];
+    video = json['video'];
+    img = json['img'];
+    estado = json['estado'];
+  }
 
-  String toJson() => json.encode(toMap());
-
-  factory Texto.fromMap(Map<String, dynamic> json) => Texto(
-    id: json["id"],
-    texto: json["texto"],
-    video: json["video"],
-    img: json["img"],
-    estado: json["estado"],
-    tipo_texto: _TipoTexto.fromMap(json["tipo_texto"]),
-  );
-
-  Map<String, dynamic> toMap() => {
-    "id": id,
-    "texto": texto,
-    "video": video,
-    "img": img,
-    "estado": estado,
-    "tipo_texto": tipo_texto.toMap(),
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    if (this.tipoTexto != null) {
+      data['tipo_texto'] = this.tipoTexto!.toJson();
+    }
+    data['texto'] = this.texto;
+    data['video'] = this.video;
+    data['img'] = this.img;
+    data['estado'] = this.estado;
+    return data;
+  }
 }
 
-class _TipoTexto {
-  _TipoTexto({
-    required this.id,
-    required this.tipo,
-    required this.img,
-    required this.estado,
-  });
+class TipoTexto {
+  int? id;
+  String? tipo;
+  Null? img;
+  String? estado;
 
-  String id;
-  String tipo;
-  String img;
-  String estado;
+  TipoTexto({this.id, this.tipo, this.img, this.estado});
 
-  factory _TipoTexto.fromJson(String str) => _TipoTexto.fromMap(json.decode(str));
+  TipoTexto.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    tipo = json['tipo'];
+    img = json['img'];
+    estado = json['estado'];
+  }
 
-  String toJson() => json.encode(toMap());
-
-  factory _TipoTexto.fromMap(Map<String, dynamic> json) => _TipoTexto(
-    id: json["id"],
-    tipo: json["tipo"],
-    img: json["img"],
-    estado: json["estado"],
-  );
-
-  Map<String, dynamic> toMap() => {
-    "id": id,
-    "tipo": tipo,
-    "img": img,
-    "estado": estado,
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['tipo'] = this.tipo;
+    data['img'] = this.img;
+    data['estado'] = this.estado;
+    return data;
+  }
 }

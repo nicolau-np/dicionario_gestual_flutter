@@ -1,6 +1,4 @@
-
 import 'dart:typed_data';
-
 
 import 'package:dio/dio.dart';
 
@@ -10,7 +8,8 @@ class CafeApi {
   static void configureDio() {
     //base da url
 
-    _dio.options.baseUrl = 'http://localhost:8000/api';
+    _dio.options.baseUrl = 'http://127.0.0.1:8000/api';
+
     //Configurar headers
   }
 
@@ -18,6 +17,7 @@ class CafeApi {
     try {
       final resp = await _dio.get(path);
 
+      //print(resp);
       return resp.data;
     } on DioError catch (e) {
       throw ("Error no GET $e");
@@ -69,7 +69,7 @@ class CafeApi {
   static Future uploadFile(String path, Uint8List bytes) async {
     // ignore: avoid_print
     final formData =
-    FormData.fromMap({'archivo': MultipartFile.fromBytes(bytes)});
+        FormData.fromMap({'archivo': MultipartFile.fromBytes(bytes)});
 
     try {
       final resp = await _dio.put(path, data: formData);
