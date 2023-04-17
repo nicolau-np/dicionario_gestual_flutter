@@ -15,7 +15,8 @@ class ModalSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const VideoWidget(),
+           VideoWidget(texto.video),
+          const SizedBox(height: 4,),
           Center(
             child: ElevatedButton(
               child: const Text('Fechar'),
