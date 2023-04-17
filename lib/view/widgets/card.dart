@@ -1,6 +1,8 @@
-import 'package:dic_project/models/tipo_texto.dart';
 import 'package:dic_project/view/home/list_texto.dart';
 import 'package:flutter/material.dart';
+
+import '../../models/texto.dart';
+import '../../models/tipo_texto.dart';
 
 class CardType extends StatelessWidget {
   final TipoTexto tipoTexto;

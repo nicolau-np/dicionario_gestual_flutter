@@ -9,7 +9,7 @@ class TextosProvider extends ChangeNotifier {
   }
   List<Texto> textos = [];
 
-  getTextos() async {
+  Future<void> getTextos() async {
     final resp = await CafeApi.httpGet("/textos");
 
     final textosResp = TextosResponse.fromJson(resp);
@@ -19,14 +19,13 @@ class TextosProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-   getTextoCategory(int id) async {
-    final resp = await CafeApi.httpGet("/textos/category/${id}");
+  Future<void> getTextoCategory(int id) async {
+    final resp = await CafeApi.httpGet("/textos/category/$id");
 
     final textosResp = TextosResponse.fromJson(resp);
-
-    textos = [...?textosResp.data];
+    print('valor ${textosResp.data}');
+    textos = [...textosResp.data!];
 
     notifyListeners();
   }
-
 }

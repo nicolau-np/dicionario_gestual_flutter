@@ -1,6 +1,6 @@
 class Texto {
   int? id;
-  TipoTexto? tipoTexto;
+  _TipoTexto? tipoTexto;
   String? texto;
   String? video;
   String? img;
@@ -12,7 +12,7 @@ class Texto {
   Texto.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     tipoTexto = json['tipo_texto'] != null
-        ? new TipoTexto.fromJson(json['tipo_texto'])
+        ? new _TipoTexto.fromJson(json['tipo_texto'])
         : null;
     texto = json['texto'];
     video = json['video'];
@@ -34,15 +34,15 @@ class Texto {
   }
 }
 
-class TipoTexto {
+class _TipoTexto {
   int? id;
   String? tipo;
   String? img;
   String? estado;
 
-  TipoTexto({this.id, this.tipo, this.img, this.estado});
+  _TipoTexto({this.id, this.tipo, this.img, this.estado});
 
-  TipoTexto.fromJson(Map<String, dynamic> json) {
+  _TipoTexto.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     tipo = json['tipo'];
     img = json['img'];
