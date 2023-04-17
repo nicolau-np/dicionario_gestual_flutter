@@ -23,7 +23,7 @@ class TextosProvider extends ChangeNotifier {
     final resp = await CafeApi.httpGet("/textos/category/$id");
 
     final textosResp = TextosResponse.fromJson(resp);
-    print('valor ${textosResp.data}');
+    
     textos = [...textosResp.data!];
 
     notifyListeners();
