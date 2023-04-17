@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -32,7 +31,9 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (ctx, index) {
           final tipoTexto = tipoTextos[index];
 
-          return CardType(tipoTexto: tipoTexto);
+          return Card(
+            child: CardType(tipoTexto: tipoTexto),
+          );
         },
       ),
     );

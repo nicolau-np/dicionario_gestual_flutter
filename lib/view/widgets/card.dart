@@ -8,24 +8,27 @@ class CardType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.red,
+        color: Colors.white,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(
-            "${tipoTexto.img}",
-            height: 100,
-            width: 100,
-          ),
+          Container(
+              decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+              "${tipoTexto.img}",
+            )),
+          )),
           Text(
             tipoTexto.tipo ?? '',
             style: const TextStyle(
-              color: Colors.white,
-              fontSize: 30,
+              color: Colors.black,
+              fontSize: 20,
             ),
           ),
         ],

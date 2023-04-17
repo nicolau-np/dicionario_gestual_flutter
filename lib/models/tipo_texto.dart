@@ -1,7 +1,7 @@
 class TipoTexto {
   int? id;
   String? tipo;
-  Null? img;
+  String? img;
   String? estado;
 
   TipoTexto({this.id, this.tipo, this.img, this.estado});
