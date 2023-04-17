@@ -1,3 +1,4 @@
+import 'package:dic_project/view/about_page.dart';
 import 'package:dic_project/view/games_page.dart';
 import 'package:dic_project/view/home_page.dart';
 import 'package:dic_project/view/voice_page.dart';
@@ -18,33 +19,49 @@ class _NavBarMenuState extends State<NavBarMenu> {
     const HomePage(),
     const VoicePage(),
     const GamePage(),
+    const AboutPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[selectedIndex],
-      bottomNavigationBar: GNav(
-        onTabChange: (value) {
-          selectedIndex = value;
-          setState(() {});
-        },
-        selectedIndex: selectedIndex,
-        tabs: const [
-          GButton(
-            icon: Icons.home,
-            text: 'Principal',
+        body: pages[selectedIndex],
+        bottomNavigationBar: Container(
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+            child: GNav(
+              onTabChange: (value) {
+                selectedIndex = value;
+                setState(() {});
+              },
+              selectedIndex: selectedIndex,
+              backgroundColor: Colors.black,
+              color: Colors.white,
+              activeColor: Colors.white,
+              tabBackgroundColor: Colors.grey.shade800,
+              gap: 8,
+              padding: const EdgeInsets.all(16),
+              tabs: const [
+                GButton(
+                  icon: Icons.home,
+                  text: 'Principal',
+                ),
+                GButton(
+                  icon: Icons.mic,
+                  text: 'Voz',
+                ),
+                GButton(
+                  icon: Icons.games,
+                  text: 'Jogos',
+                ),
+                GButton(
+                  icon: Icons.file_copy_outlined,
+                  text: 'Sobre',
+                ),
+              ],
+            ),
           ),
-          GButton(
-            icon: Icons.mic,
-            text: 'Voz',
-          ),
-          GButton(
-            icon: Icons.games,
-            text: 'Jogos',
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
