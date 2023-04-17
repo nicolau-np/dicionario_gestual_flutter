@@ -1,3 +1,4 @@
+import 'package:dic_project/view/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 class VoicePage extends StatelessWidget {
@@ -9,9 +10,7 @@ class VoicePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Voz'),
       ),
-      body: const Center(
-        child: Text('hello'),
-      ),
+      body: Center(),
     );
   }
 }

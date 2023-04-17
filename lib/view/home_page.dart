@@ -1,4 +1,5 @@
 import 'package:dic_project/providers/tipo_textos_providers.dart';
+import 'package:dic_project/view/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,9 +32,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (ctx, index) {
           final tipoTexto = tipoTextos[index];
 
-          return Card(
-            child: Text(tipoTexto.tipo ?? ''),
-          );
+          return CardType(tipoTexto: tipoTexto);
         },
       ),
     );
