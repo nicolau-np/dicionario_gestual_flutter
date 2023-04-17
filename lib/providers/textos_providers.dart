@@ -14,6 +14,16 @@ class TextosProvider extends ChangeNotifier {
 
     final textosResp = TextosResponse.fromJson(resp);
 
+    textos = [...textosResp.data!];
+
+    notifyListeners();
+  }
+
+   getTextoTipo(String id) async {
+    final resp = await CafeApi.httpGet("/textos/category/${id}");
+
+    final textosResp = TextosResponse.fromJson(resp);
+
     textos = [...?textosResp.data];
 
     notifyListeners();

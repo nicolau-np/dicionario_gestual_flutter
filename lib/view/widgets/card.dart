@@ -1,4 +1,5 @@
 import 'package:dic_project/models/tipo_texto.dart';
+import 'package:dic_project/view/home/list_texto.dart';
 import 'package:flutter/material.dart';
 
 class CardType extends StatelessWidget {
@@ -8,30 +9,36 @@ class CardType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-              decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ListTexto(tipoTexto: tipoTexto)),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
               "${tipoTexto.img}",
-            )),
-          )),
-          Text(
-            tipoTexto.tipo ?? '',
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 20,
+              height: 100,
+              width: 100,
             ),
-          ),
-        ],
+            Text(
+              tipoTexto.tipo ?? '',
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

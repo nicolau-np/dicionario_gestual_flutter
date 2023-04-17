@@ -3,7 +3,7 @@ class Texto {
   TipoTexto? tipoTexto;
   String? texto;
   String? video;
-  Null? img;
+  String? img;
   String? estado;
 
   Texto(
@@ -37,7 +37,7 @@ class Texto {
 class TipoTexto {
   int? id;
   String? tipo;
-  Null? img;
+  String? img;
   String? estado;
 
   TipoTexto({this.id, this.tipo, this.img, this.estado});

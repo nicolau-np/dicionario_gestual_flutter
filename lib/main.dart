@@ -1,8 +1,8 @@
 import 'package:dic_project/api/CafeApi.dart';
+import 'package:dic_project/providers/textos_providers.dart';
 import 'package:dic_project/providers/tipo_textos_providers.dart';
 import 'package:dic_project/view/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:dic_project/view/home_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -22,7 +22,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => TipoTextosProvider(),
           lazy: false,
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (_) => TextosProvider(),
+          lazy: false,
+        ),
       ],
       child: MaterialApp(
         title: 'Dicionário Gestual',
