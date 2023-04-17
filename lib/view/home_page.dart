@@ -19,14 +19,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final tipoTextos = Provider.of<TipoTextosProvider>(context).tipo_textos;
-    
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dicionario Gestual'),
+        title: const Text('Dicionario Gestual'),
       ),
       body: GridView.builder(
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: tipoTextos.length,
         itemBuilder: (ctx, index) {
           final tipoTexto = tipoTextos[index];

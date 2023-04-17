@@ -1,5 +1,6 @@
 import 'package:dic_project/api/CafeApi.dart';
 import 'package:dic_project/providers/tipo_textos_providers.dart';
+import 'package:dic_project/view/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:dic_project/view/home_page.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage(),
+        home: NavBarMenu(),
       ),
     );
   }
