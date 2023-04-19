@@ -10,7 +10,16 @@ class VoicePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Voz'),
       ),
-      body: Center(),
+      body: const Center(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          
+        },
+        child: const Icon(
+          Icons.mic_none,
+          size: 36,
+        ),
+      ),
     );
   }
 }
