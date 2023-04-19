@@ -120,14 +120,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      sha256: "6cec7404b25d6338c8cb7b30131cd6c760079a4ec1fa7846c55bdda91f9d2819"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.1"
   lints:
     dependency: transitive
     description:
@@ -176,14 +168,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      sha256: "67fc27ed9639506c856c840ccce7594d0bdcd91bc8d53d6e52359449a1d50602"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.11.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -213,22 +197,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  speech_to_text:
-    dependency: "direct main"
-    description:
-      name: speech_to_text
-      sha256: "711954bce7faf6ce36f2f098b4264c4472d039a366b314742125ee256095896f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.0"
-  speech_to_text_platform_interface:
-    dependency: transitive
-    description:
-      name: speech_to_text_platform_interface
-      sha256: "10ba367f4d9b0cd72bc46692f24a597501e716027530aa148cd61840f5252593"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.2"
   stack_trace:
     dependency: transitive
     description:
