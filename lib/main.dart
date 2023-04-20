@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 
 void main() {
   CafeApi.configureDio();
-
   runApp(const MyApp());
 }
 
