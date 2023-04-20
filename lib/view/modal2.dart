@@ -26,8 +26,9 @@ class _ModalSheetState extends State<ModalSheet> {
 
   @override
   Widget build(BuildContext context) {
-    final texto = Provider.of<TextosProvider>(context).textos;
-   
+    final texto = Provider.of<TextosProvider>(context).texto;
+    print(texto);
+
     return Scaffold(
         body: Container(
       color: Colors.white,

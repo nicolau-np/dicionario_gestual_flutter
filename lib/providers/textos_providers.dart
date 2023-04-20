@@ -8,6 +8,7 @@ class TextosProvider extends ChangeNotifier {
     getTextos();
   }
   List<Texto> textos = [];
+  Texto texto = Texto();
 
   Future<void> getTextos() async {
     final resp = await CafeApi.httpGet("/textos");

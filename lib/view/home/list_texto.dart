@@ -49,18 +49,30 @@ class _ListTextoState extends State<ListTexto> {
                     'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/336922890_924909615385741_7275546257988471995_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeF01MBNA1bf0ty588XVezm2demCvspW6lt16YK-ylbqWzk5m68ohD1LH6YrEKeqbSjmz6QV61E7xbLwOJQZ9dZ8&_nc_ohc=9Wcj6PEkAX8AX8wBC9B&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfBsJEi7MRE1kw_LmY_CKMFiTt49G3XxjZ1zcMTIdVjY5A&oe=6442071C',
                   ),
                 ),
-                onTap: () => showModalBottomSheet(
-                  isDismissible: false,
-                  enableDrag: false,
-                  //isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(20),
-                    ),
+                subtitle: const Text('hello'),
+                trailing: SizedBox(
+                  width: 100,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => showModalBottomSheet(
+                          isDismissible: false,
+                          enableDrag: false,
+                          //isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          context: context,
+                          builder: (context) => ModalSheet(texto: texto),
+                        ),
+                        icon: const Icon(Icons.edit),
+                        color: Colors.orange,
+                      )
+                    ],
                   ),
-                  context: context,
-                  builder: (context) => ModalSheet(texto: texto),
                 ),
               ),
             ),
