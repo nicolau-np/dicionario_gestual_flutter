@@ -80,7 +80,7 @@ class _VoicePageState extends State<VoicePage> {
         ),
       ),
       context: context,
-      builder: (context) => ModalSheet(texto: _text),
+      builder: (context) => ModalSheet(text: _text),
     );
   }
 }

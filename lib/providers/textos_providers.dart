@@ -23,7 +23,17 @@ class TextosProvider extends ChangeNotifier {
     final resp = await CafeApi.httpGet("/textos/category/$id");
 
     final textosResp = TextosResponse.fromJson(resp);
-    
+
+    textos = [...textosResp.data!];
+
+    notifyListeners();
+  }
+
+  Future<void> searchTexto(String texto) async {
+    final resp = await CafeApi.httpGet("/textos/search/$texto");
+
+    final textosResp = TextosResponse.fromJson(resp);
+
     textos = [...textosResp.data!];
 
     notifyListeners();
