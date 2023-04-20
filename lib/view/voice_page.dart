@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:dic_project/view/modal2.dart';
 
 class VoicePage extends StatefulWidget {
   const VoicePage({super.key});
@@ -68,6 +69,18 @@ class _VoicePageState extends State<VoicePage> {
   }
 
   void _procurartext() {
-    print("falou: $_text");
+    showModalBottomSheet(
+      isDismissible: false,
+      enableDrag: false,
+      //isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      context: context,
+      builder: (context) => ModalSheet(texto: _text),
+    );
   }
 }
