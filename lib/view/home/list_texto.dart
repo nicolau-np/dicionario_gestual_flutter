@@ -37,19 +37,17 @@ class _ListTextoState extends State<ListTexto> {
         itemBuilder: (context, index) {
           final texto = textos[index];
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(3.0),
             child: Container(
-              color: Colors.amber[100],
+              color: Colors.amber[50],
               child: ListTile(
                 title: Text(texto.texto ?? ''),
-                leading: SizedBox(
+                leading: const SizedBox(
                   height: 58,
                   width: 58,
-                  child: Image.network(
-                    'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/336922890_924909615385741_7275546257988471995_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeF01MBNA1bf0ty588XVezm2demCvspW6lt16YK-ylbqWzk5m68ohD1LH6YrEKeqbSjmz6QV61E7xbLwOJQZ9dZ8&_nc_ohc=9Wcj6PEkAX8AX8wBC9B&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfBsJEi7MRE1kw_LmY_CKMFiTt49G3XxjZ1zcMTIdVjY5A&oe=6442071C',
-                  ),
+                  child: const Icon(Icons.subject),
                 ),
-                subtitle: const Text('hello'),
+                subtitle: const Text('...'),
                 trailing: SizedBox(
                   width: 100,
                   child: Row(
@@ -68,14 +66,14 @@ class _ListTextoState extends State<ListTexto> {
                           context: context,
                           builder: (context) => ModalSheet(texto: texto),
                         ),
-                        icon: const Icon(Icons.edit),
+                        icon: const Icon(Icons.smart_display),
                         color: Colors.orange,
                       ),
                       IconButton(
                         onPressed: () {
                           print('hello');
                         },
-                        icon: const Icon(Icons.mic),
+                        icon: const Icon(Icons.settings_input_antenna_sharp),
                         color: Colors.orange,
                       ),
                     ],
