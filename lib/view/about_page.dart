@@ -7,8 +7,13 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('hello'),
+    return Row(
+      children: const [
+        Text(
+          'Dicionário Gestual',
+          style: TextStyle(fontSize: 15),
+        ),
+      ],
     );
   }
 }

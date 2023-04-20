@@ -11,7 +11,7 @@ class ModalSheet extends StatelessWidget {
     return Scaffold(
         body: Container(
       color: Colors.white,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(5),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
