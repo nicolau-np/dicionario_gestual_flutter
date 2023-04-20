@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:avatar_glow/avatar_glow.dart';
 
 class VoicePage extends StatefulWidget {
   const VoicePage({super.key});
@@ -12,7 +11,7 @@ class VoicePage extends StatefulWidget {
 class _VoicePageState extends State<VoicePage> {
   stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
-  String _text = '';
+  String _text = 'Diga alguma coisa';
   double _confidence = 1.0;
 
   @override
@@ -29,31 +28,17 @@ class _VoicePageState extends State<VoicePage> {
         title: const Text('Voz'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: AvatarGlow(
-        animate: _isListening,
-        glowColor: Theme.of(context).primaryColor,
-        endRadius: 75.0,
-        duration: const Duration(milliseconds: 2000),
-        repeatPauseDuration: const Duration(milliseconds: 100),
-        repeat: true,
-        child: FloatingActionButton(
-          onPressed: _listen,
-          child: Icon(_isListening ? Icons.mic : Icons.mic_none),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _listen,
+        child: Icon(_isListening ? Icons.mic : Icons.mic_none),
       ),
-      body: SingleChildScrollView(
-        reverse: true,
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 150.0),
-          child: Text(
-            _text,
+      body: Center(
+        child: Text(_text,
             style: const TextStyle(
               fontSize: 32.0,
               color: Colors.black,
               fontWeight: FontWeight.w400,
-            ),
-          ),
-        ),
+            )),
       ),
     );
   }
@@ -78,6 +63,11 @@ class _VoicePageState extends State<VoicePage> {
     } else {
       setState(() => _isListening = false);
       _speech.stop();
+      _procurartext();
     }
+  }
+
+  void _procurartext() {
+    print("falou: $_text");
   }
 }

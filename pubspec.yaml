@@ -40,8 +40,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   youtube_player_iframe: ^2.3.0
   speech_to_text: ^6.1.1
-  highlight_text: ^0.7.2
-  avatar_glow: ^1.2.0
+
  
 dev_dependencies:
   flutter_test:
