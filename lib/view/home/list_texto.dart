@@ -70,7 +70,14 @@ class _ListTextoState extends State<ListTexto> {
                         ),
                         icon: const Icon(Icons.edit),
                         color: Colors.orange,
-                      )
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          print('hello');
+                        },
+                        icon: const Icon(Icons.mic),
+                        color: Colors.orange,
+                      ),
                     ],
                   ),
                 ),
