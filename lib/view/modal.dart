@@ -24,6 +24,7 @@ class ModalSheet extends StatelessWidget {
               texto.texto ?? '',
               style: const TextStyle(
                 fontSize: 19,
+                color: Colors.purple,
                 fontWeight: FontWeight.bold,
               ),
             ),

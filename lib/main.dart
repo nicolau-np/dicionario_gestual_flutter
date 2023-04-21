@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         title: 'Dicionário Gestual',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
         ),
         home: const NavBarMenu(),
       ),

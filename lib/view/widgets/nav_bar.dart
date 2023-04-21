@@ -27,7 +27,7 @@ class _NavBarMenuState extends State<NavBarMenu> {
     return Scaffold(
         body: pages[selectedIndex],
         bottomNavigationBar: Container(
-          color: Colors.black,
+          color: Colors.purple[200],
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
             child: GNav(
@@ -36,10 +36,10 @@ class _NavBarMenuState extends State<NavBarMenu> {
                 setState(() {});
               },
               selectedIndex: selectedIndex,
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.purple.shade200,
               color: Colors.white,
               activeColor: Colors.white,
-              tabBackgroundColor: Colors.grey.shade800,
+              tabBackgroundColor: Colors.purple,
               gap: 8,
               padding: const EdgeInsets.all(16),
               tabs: const [

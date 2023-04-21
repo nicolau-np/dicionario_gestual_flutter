@@ -62,15 +62,25 @@ class _ListTextoState extends State<ListTexto> {
                   return Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: Container(
-                      color: Colors.amber[50],
+                      color: Colors.purple[200],
                       child: ListTile(
-                        title: Text(texto.texto ?? ''),
+                        title: Text(
+                          texto.texto ?? '',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                         leading: const SizedBox(
                           height: 58,
                           width: 58,
                           child: Icon(Icons.subject),
                         ),
-                        subtitle: const Text('...'),
+                        subtitle: const Text(
+                          '...',
+                          style: TextStyle(color: Colors.white),
+                        ),
                         trailing: SizedBox(
                           width: 100,
                           child: Row(
@@ -91,13 +101,13 @@ class _ListTextoState extends State<ListTexto> {
                                       ModalSheet(texto: texto),
                                 ),
                                 icon: const Icon(Icons.smart_display),
-                                color: Colors.orange,
+                                color: Colors.purple,
                               ),
                               IconButton(
                                 onPressed: () => _speech(texto.texto ?? ''),
                                 icon: const Icon(
                                     Icons.settings_input_antenna_sharp),
-                                color: Colors.orange,
+                                color: Colors.purple,
                               ),
                             ],
                           ),

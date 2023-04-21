@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dicionario Gestual'),
+        title: const Text('Dicionário Gestual'),
       ),
       body: GridView.builder(
         gridDelegate:
