@@ -33,13 +33,18 @@ class _VoicePageState extends State<VoicePage> {
         onPressed: _listen,
         child: Icon(_isListening ? Icons.mic : Icons.mic_none),
       ),
-      body: Center(
-        child: Text(_text,
-            style: const TextStyle(
-              fontSize: 32.0,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            )),
+      body: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Text(_text,
+                style: const TextStyle(
+                  fontSize: 32.0,
+                  color: Colors.purple,
+                  fontWeight: FontWeight.w400,
+                )),
+          ),
+        ),
       ),
     );
   }
