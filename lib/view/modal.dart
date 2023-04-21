@@ -15,11 +15,29 @@ class ModalSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-           VideoWidget(texto.video),
-          const SizedBox(height: 4,),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: Text(
+              texto.texto ?? '',
+              style: const TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          VideoWidget(texto.video),
+          const SizedBox(
+            height: 10,
+          ),
           Center(
             child: ElevatedButton(
-              child: const Text('Fechar'),
+              child: const Icon(
+                Icons.close,
+              ),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ),
