@@ -1,6 +1,7 @@
 import 'package:dic_project/providers/textos_providers.dart';
 import 'package:dic_project/view/modal.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/tipo_texto.dart';
@@ -30,6 +31,14 @@ class _ListTextoState extends State<ListTexto> {
   @override
   Widget build(BuildContext context) {
     final textos = Provider.of<TextosProvider>(context).textos;
+    final FlutterTts flutterTts = FlutterTts();
+
+    Future _speech(String text) async {
+      await flutterTts.setLanguage("pt-PT");
+      await flutterTts.setPitch(1);
+      await flutterTts.speak(text);
+    }
+
     return Scaffold(
       appBar: AppBar(title: Text("${widget.tipoTexto.tipo}")),
       body: ListView.builder(
@@ -45,7 +54,7 @@ class _ListTextoState extends State<ListTexto> {
                 leading: const SizedBox(
                   height: 58,
                   width: 58,
-                  child: const Icon(Icons.subject),
+                  child: Icon(Icons.subject),
                 ),
                 subtitle: const Text('...'),
                 trailing: SizedBox(
@@ -70,9 +79,7 @@ class _ListTextoState extends State<ListTexto> {
                         color: Colors.orange,
                       ),
                       IconButton(
-                        onPressed: () {
-                          print('hello');
-                        },
+                        onPressed: () => _speech(texto.texto ?? ''),
                         icon: const Icon(Icons.settings_input_antenna_sharp),
                         color: Colors.orange,
                       ),
@@ -86,10 +93,4 @@ class _ListTextoState extends State<ListTexto> {
       ),
     );
   }
-
-  Widget builderSheet() => Column(
-        children: const [
-          Text('hello world'),
-        ],
-      );
 }
