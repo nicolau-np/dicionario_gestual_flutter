@@ -12,6 +12,9 @@ class AboutPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+            const SizedBox(
+              height: 10,
+            ),
             SizedBox(
               height: 100,
               width: 100,
@@ -20,12 +23,33 @@ class AboutPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             const Text(
               'Dango Gestos',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.purple,
                 fontSize: 30,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: const [
+                    Text(
+                      'Desenvolvedor: Nicolau Ngala Pungue',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
