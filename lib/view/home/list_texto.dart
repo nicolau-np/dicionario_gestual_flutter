@@ -35,7 +35,7 @@ class _ListTextoState extends State<ListTexto> {
 
     Future _speech(String text) async {
       await flutterTts.setLanguage("pt-PT");
-      await flutterTts.setPitch(1);
+      await flutterTts.setPitch(2);
       await flutterTts.speak(text);
     }
 
