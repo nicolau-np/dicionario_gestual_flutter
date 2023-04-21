@@ -3,12 +3,12 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 
 class CafeApi {
-  static final Dio _dio = new Dio();
+  static final Dio _dio = Dio();
 
   static void configureDio() {
     //base da url
 
-    _dio.options.baseUrl = 'http://127.0.0.1:8000/api';
+    _dio.options.baseUrl = 'https://dicionario.empregofacilitado.com/api';
 
     //Configurar headers
   }
