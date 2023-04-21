@@ -44,10 +44,19 @@ class AboutPage extends StatelessWidget {
                   children: const [
                     Text(
                       'Desenvolvedor: Nicolau Ngala Pungue',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Text(
+                      'HTML',
                       style: TextStyle(
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

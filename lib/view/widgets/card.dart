@@ -1,7 +1,6 @@
 import 'package:dic_project/view/home/list_texto.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/texto.dart';
 import '../../models/tipo_texto.dart';
 
 class CardType extends StatelessWidget {
@@ -29,15 +28,15 @@ class CardType extends StatelessWidget {
           children: [
             Image.network(
               "${tipoTexto.img}",
-              height: 100,
-              width: 100,
+              height: 80,
+              width: 80,
             ),
             Text(
               tipoTexto.tipo ?? '',
               style: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-              ),
+                  color: Colors.purple,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,),
             ),
           ],
         ),

@@ -41,7 +41,7 @@ class _NavBarMenuState extends State<NavBarMenu> {
               activeColor: Colors.white,
               tabBackgroundColor: Colors.purple,
               gap: 8,
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(10),
               tabs: const [
                 GButton(
                   icon: Icons.home,
