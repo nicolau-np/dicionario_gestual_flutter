@@ -9,20 +9,27 @@ class AboutPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sobre'),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Image.asset(
-              'assets/images/img_gestos.png',
-              fit: BoxFit.cover,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: Image.asset(
+                'assets/images/img_gestos.png',
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          const Text(
-            'Dango Gestos',
-          )
-        ],
+            const Text(
+              'Dango Gestos',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+                fontSize: 30,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

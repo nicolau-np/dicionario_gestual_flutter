@@ -37,11 +37,29 @@ class _ModalSheetState extends State<ModalSheet> {
         mainAxisSize: MainAxisSize.min,
         children: [
           const SizedBox(
-            height: 4,
+            height: 10,
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: Text(
+              widget.text,
+              style: const TextStyle(
+                fontSize: 19,
+                color: Colors.purple,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          VideoWidget(""),
+          const SizedBox(
+            height: 10,
           ),
           Center(
             child: ElevatedButton(
-              child: const Text('Fechar'),
+              child: const Icon(
+                Icons.close,
+              ),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ),
