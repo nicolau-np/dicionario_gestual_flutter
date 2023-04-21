@@ -45,9 +45,6 @@ class _ListTextoState extends State<ListTexto> {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            const SizedBox(
-              height: 5,
-            ),
             const TextField(
               decoration: InputDecoration(
                 labelText: 'Pesquisar...',
