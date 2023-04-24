@@ -20,10 +20,10 @@ class _ListTextoState extends State<ListTexto> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getTextos();
+    getTextoss();
   }
 
-  Future<void> getTextos() async {
+  Future<void> getTextoss() async {
     await Provider.of<TextosProvider>(context, listen: false)
         .getTextoCategory(widget.tipoTexto.id ?? 1);
   }

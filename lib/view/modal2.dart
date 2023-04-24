@@ -51,7 +51,7 @@ class _ModalSheetState extends State<ModalSheet> {
           ),
           const SizedBox(height: 10),
           if (texto != null)
-            const VideoWidget("https://youtu.be/AxBDTcaHNTE")
+            VideoWidget(texto.video)
           else
             const Text('Nao encontrou'),
           const SizedBox(

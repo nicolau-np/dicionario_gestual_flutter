@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 
 class TextosProvider extends ChangeNotifier {
   TextosProvider() {
-    getTextos();
+    // getTextos();
   }
   List<Texto> textos = [];
-  Texto? texto ;
+  Texto? texto;
 
   Future<void> getTextos() async {
     final resp = await CafeApi.httpGet("/textos");
