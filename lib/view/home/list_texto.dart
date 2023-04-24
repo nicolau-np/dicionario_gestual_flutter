@@ -43,9 +43,7 @@ class _ListTextoState extends State<ListTexto> {
     void _runFilter(String enteredKeyword) {
       if (enteredKeyword.isEmpty) {
         print('vazio');
-      } else {
-        
-      }
+      } else {}
     }
 
     return Scaffold(
