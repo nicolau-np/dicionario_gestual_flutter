@@ -27,7 +27,6 @@ class _ModalSheetState extends State<ModalSheet> {
   @override
   Widget build(BuildContext context) {
     final texto = Provider.of<TextosProvider>(context).texto;
-    print(texto);
 
     return Scaffold(
         body: Container(
@@ -51,7 +50,10 @@ class _ModalSheetState extends State<ModalSheet> {
             ),
           ),
           const SizedBox(height: 10),
-          const VideoWidget("https://youtu.be/AxBDTcaHNTE"),
+          if (texto != null)
+            const VideoWidget("https://youtu.be/AxBDTcaHNTE")
+          else
+            const Text('Nao encontrou'),
           const SizedBox(
             height: 10,
           ),

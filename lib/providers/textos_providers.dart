@@ -8,7 +8,7 @@ class TextosProvider extends ChangeNotifier {
     getTextos();
   }
   List<Texto> textos = [];
-  Texto texto = Texto();
+  Texto? texto ;
 
   Future<void> getTextos() async {
     final resp = await CafeApi.httpGet("/textos");
@@ -30,12 +30,12 @@ class TextosProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> searchTexto(String texto) async {
-    final resp = await CafeApi.httpGet("/textos/search/$texto");
+  Future<void> searchTexto(String palavra) async {
+    final resp = await CafeApi.httpGet("/textos/search/$palavra");
 
-    final textosResp = TextosResponse.fromJson(resp);
+    final textosResp = Texto.fromJson(resp['data']);
 
-    textos = [...textosResp.data!];
+    texto = textosResp;
 
     notifyListeners();
   }

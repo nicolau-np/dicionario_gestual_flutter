@@ -39,14 +39,24 @@ class _ListTextoState extends State<ListTexto> {
       await flutterTts.speak(text);
     }
 
+    // This function is called whenever the text field changes
+    void _runFilter(String enteredKeyword) {
+      if (enteredKeyword.isEmpty) {
+        print('vazio');
+      } else {
+        
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(title: Text("${widget.tipoTexto.tipo}")),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              onChanged: (value) => _runFilter(value),
+              decoration: const InputDecoration(
                 labelText: 'Pesquisar...',
                 suffixIcon: Icon(Icons.search),
               ),
