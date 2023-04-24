@@ -24,6 +24,7 @@ class _ListTextoState extends State<ListTexto> {
   }
 
   Future<void> getTextoss() async {
+    Provider.of<TextosProvider>(context, listen: false).textos.clear();
     await Provider.of<TextosProvider>(context, listen: false)
         .getTextoCategory(widget.tipoTexto.id ?? 1);
   }
@@ -52,80 +53,83 @@ class _ListTextoState extends State<ListTexto> {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            TextField(
-              onChanged: (value) => _runFilter(value),
-              decoration: const InputDecoration(
-                labelText: 'Pesquisar...',
-                suffixIcon: Icon(Icons.search),
+            if (textos.isNotEmpty) ...[
+              TextField(
+                onChanged: (value) => _runFilter(value),
+                decoration: const InputDecoration(
+                  labelText: 'Pesquisar...',
+                  suffixIcon: Icon(Icons.search),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: textos.length,
-                itemBuilder: (context, index) {
-                  final texto = textos[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      color: Colors.purple[200],
-                      child: ListTile(
-                        title: Text(
-                          texto.texto ?? '',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+              const SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: textos.length,
+                  itemBuilder: (context, index) {
+                    final texto = textos[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Container(
+                        color: Colors.purple[200],
+                        child: ListTile(
+                          title: Text(
+                            texto.texto ?? '',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        leading: const SizedBox(
-                          height: 58,
-                          width: 58,
-                          child: Icon(Icons.subject),
-                        ),
-                        subtitle: const Text(
-                          '...',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        trailing: SizedBox(
-                          width: 100,
-                          child: Row(
-                            children: [
-                              IconButton(
-                                onPressed: () => showModalBottomSheet(
-                                  isDismissible: false,
-                                  enableDrag: false,
-                                  //isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(20),
+                          leading: const SizedBox(
+                            height: 58,
+                            width: 58,
+                            child: Icon(Icons.subject),
+                          ),
+                          subtitle: const Text(
+                            '...',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          trailing: SizedBox(
+                            width: 100,
+                            child: Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () => showModalBottomSheet(
+                                    isDismissible: false,
+                                    enableDrag: false,
+                                    //isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(20),
+                                      ),
                                     ),
+                                    context: context,
+                                    builder: (context) =>
+                                        ModalSheet(texto: texto),
                                   ),
-                                  context: context,
-                                  builder: (context) =>
-                                      ModalSheet(texto: texto),
+                                  icon: const Icon(Icons.smart_display),
+                                  color: Colors.purple,
                                 ),
-                                icon: const Icon(Icons.smart_display),
-                                color: Colors.purple,
-                              ),
-                              IconButton(
-                                onPressed: () => _speech(texto.texto ?? ''),
-                                icon: const Icon(
-                                    Icons.settings_input_antenna_sharp),
-                                color: Colors.purple,
-                              ),
-                            ],
+                                IconButton(
+                                  onPressed: () => _speech(texto.texto ?? ''),
+                                  icon: const Icon(
+                                      Icons.settings_input_antenna_sharp),
+                                  color: Colors.purple,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  );
-                },
-              ),
-            ),
+                    );
+                  },
+                ),
+              )
+            ] else
+              const Center(child: CircularProgressIndicator()),
           ],
         ),
       ),
