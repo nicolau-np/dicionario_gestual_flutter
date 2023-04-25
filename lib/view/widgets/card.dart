@@ -27,16 +27,17 @@ class CardType extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              "${tipoTexto.img}",
+              tipoTexto.img ?? '',
               height: 80,
               width: 80,
             ),
             Text(
               tipoTexto.tipo ?? '',
               style: const TextStyle(
-                  color: Colors.purple,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,),
+                color: Colors.purple,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),

@@ -32,17 +32,28 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: GridView.builder(
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: tipoTextos.length,
-        itemBuilder: (ctx, index) {
-          final tipoTexto = tipoTextos[index];
+      body: Column(
+        children: [
+          if (tipoTextos.isEmpty)
+            const Center(
+              child: CircularProgressIndicator(),
+            )
+          else
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemCount: tipoTextos.length,
+                itemBuilder: (ctx, index) {
+                  final tipoTexto = tipoTextos[index];
 
-          return Card(
-            child: CardType(tipoTexto: tipoTexto),
-          );
-        },
+                  return Card(
+                    child: CardType(tipoTexto: tipoTexto),
+                  );
+                },
+              ),
+            ),
+        ],
       ),
     );
   }
