@@ -1,3 +1,4 @@
+import 'package:dic_project/view/game/game1.dart';
 import 'package:flutter/material.dart';
 
 class GamePage extends StatelessWidget {
@@ -46,7 +47,12 @@ class GamePage extends StatelessWidget {
                     child: ElevatedButton(
                       child: const Text('Jogar'),
                       onPressed: () {
-                        
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const GameOne(),
+                          ),
+                        );
                       },
                     ),
                   ),
