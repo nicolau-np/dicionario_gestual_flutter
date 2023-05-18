@@ -19,7 +19,7 @@ class AboutPage extends StatelessWidget {
               height: 100,
               width: 100,
               child: Image.network(
-                'https://scontent.flad5-1.fna.fbcdn.net/v/t39.30808-6/342795026_788954619500529_341315797310630637_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeG9S-xzcbGALOjn_JgD-sfmcDjsUvLiIXJwOOxS8uIhcp3Vqpq14HY3sKzkLqGNs72dU_SILHe05-PScYduV9m-&_nc_ohc=A1uHKJu_GlgAX9WpwEa&_nc_zt=23&_nc_ht=scontent.flad5-1.fna&oh=00_AfBuLsdg-kvJZCUeZWTZT2qu0BsA3omrRyD-M6nNgY8nWQ&oe=6447B794',
+                'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/342795026_788954619500529_341315797310630637_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeELi-buYzyqk7bZlr0a-CtScDjsUvLiIXJwOOxS8uIhciCzbyWE6FnholY9AotD4LJ-JediIe8UqOLro9XE5eVM&_nc_ohc=fZ0NpILe8KoAX9hmupp&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfAeMSkcsIOkOIzV8yYGpikdA5UanvpoQj4J92b15w5BaA&oe=64539514',
                 fit: BoxFit.cover,
               ),
             ),

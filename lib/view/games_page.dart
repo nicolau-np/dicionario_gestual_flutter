@@ -25,7 +25,7 @@ class GamePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.network(
-                    'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/343403445_3419019341676270_2471787823684247912_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH1UzcjDc_QBb73DFiiYb_q93YWlW3n6pf3dhaVbefqlxduY_OXccj_8MGwTqdB7wrQrHKAoQWQMGq8uTQOChM5&_nc_ohc=UBbgzixG9ZQAX-f6i2G&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfAoLUWlSYpGLv6uLW3SpanHHmhCa4vsXNtVCas3inUNiQ&oe=644CE797',
+                    'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/343403445_3419019341676270_2471787823684247912_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEtFV27IevlvRfIZJ9rr3bf93YWlW3n6pf3dhaVbefql8nen5pzu_2aYGrB54XI5NLaoAmlnzAYJCdwVA8ogHGd&_nc_ohc=kzOYJdW3eAoAX-XbjSt&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfDgTKmLsbvtXoCy2wS1OwTRaJixk9Pma1HR8G2RgjKKNg&oe=6452D657',
                     height: 100,
                     width: 100,
                   ),
