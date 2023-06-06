@@ -25,7 +25,7 @@ class GamePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/jogo.jpeg',
+                    'assets/images/jogo.png',
                     height: 100,
                     width: 100,
                   ),
