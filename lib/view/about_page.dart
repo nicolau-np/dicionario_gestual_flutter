@@ -18,8 +18,8 @@ class AboutPage extends StatelessWidget {
             SizedBox(
               height: 100,
               width: 100,
-              child: Image.network(
-                'https://scontent.flad4-1.fna.fbcdn.net/v/t39.30808-6/342795026_788954619500529_341315797310630637_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeELi-buYzyqk7bZlr0a-CtScDjsUvLiIXJwOOxS8uIhciCzbyWE6FnholY9AotD4LJ-JediIe8UqOLro9XE5eVM&_nc_ohc=fZ0NpILe8KoAX9hmupp&_nc_zt=23&_nc_ht=scontent.flad4-1.fna&oh=00_AfAeMSkcsIOkOIzV8yYGpikdA5UanvpoQj4J92b15w5BaA&oe=64539514',
+              child: Image.asset(
+                'assets/images/gesto.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -47,7 +47,7 @@ class AboutPage extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                     SizedBox(
+                    SizedBox(
                       height: 6,
                     ),
                     Text(
@@ -56,7 +56,8 @@ class AboutPage extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
-                    ),SizedBox(
+                    ),
+                    SizedBox(
                       height: 6,
                     ),
                     Text(

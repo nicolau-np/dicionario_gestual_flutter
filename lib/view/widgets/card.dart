@@ -26,8 +26,8 @@ class CardType extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              tipoTexto.img ?? '',
+            Image.asset(
+              tipoTexto.img ?? 'assets/images/loading.gif',
               height: 80,
               width: 80,
             ),
