@@ -1,4 +1,5 @@
-import 'package:dic_project/view/games_page.dart';
+import 'package:dic_project/main.dart';
+import 'package:dic_project/view/game/game2.dart';
 import 'package:flutter/material.dart';
 
 class GameOne extends StatefulWidget {
@@ -9,10 +10,6 @@ class GameOne extends StatefulWidget {
 }
 
 class _GameOneState extends State<GameOne> {
-  bool a = false;
-  bool b = true; //verdadeira
-  bool c = false;
-
   bool clicou = false;
 
   @override
@@ -39,7 +36,7 @@ class _GameOneState extends State<GameOne> {
                   setState(() {
                     clicou = true;
                   });
-                  showAlert(text: 'Você errou', point: 0, type: 'error');
+                  showAlert(point: 0, type: 'wrong');
                 },
                 child: Container(
                   height: 65.0,
@@ -65,6 +62,7 @@ class _GameOneState extends State<GameOne> {
                   setState(() {
                     clicou = true;
                   });
+                  showAlert(point: 10, type: 'win');
                 },
                 child: Container(
                   height: 65.0,
@@ -90,6 +88,7 @@ class _GameOneState extends State<GameOne> {
                   setState(() {
                     clicou = true;
                   });
+                  showAlert(point: 0, type: 'wrong');
                 },
                 child: Container(
                   height: 65.0,
@@ -112,6 +111,7 @@ class _GameOneState extends State<GameOne> {
               child: ElevatedButton(
                 onPressed: () {
                   showDialog(
+                    barrierDismissible: false,
                     context: context,
                     builder: (context) => AlertDialog(
                       actions: [
@@ -120,7 +120,7 @@ class _GameOneState extends State<GameOne> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const GamePage(),
+                                builder: (context) => const MyApp(),
                               ),
                             );
                           },
@@ -139,7 +139,7 @@ class _GameOneState extends State<GameOne> {
                     ),
                   );
                 },
-                child: const Text('Terminar Jogo'),
+                child: const Text('Abandonar Jogo'),
               ),
             ),
           ],
@@ -148,66 +148,86 @@ class _GameOneState extends State<GameOne> {
     );
   }
 
-  void showAlert(
-      {required String text, required int point, required String type}) {
+  void showAlert({required int point, required String type}) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
         actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const GamePage(),
+          type == 'wrong'
+              ? TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MyApp(),
+                      ),
+                    );
+                  },
+                  child: const Text('Terminar'),
+                )
+              : TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const GameTwo(),
+                      ),
+                    );
+                  },
+                  child: const Text('Continuar'),
                 ),
-              );
-            },
-            child: const Text('Terminar'),
-          ),
         ],
         title: const Text('Informação'),
         contentPadding: const EdgeInsets.all(20.0),
-        content: Column(
-          children: [
-            Center(
-              child: type == 'wrong'
-                  ? Image.asset(
-                      'assets/images/wrong.png',
-                      height: 50,
-                      width: 50,
-                    )
-                  : Image.asset(
-                      'assets/images/win.png',
-                      height: 50,
-                      width: 50,
-                    ),
-            ),
-            const SizedBox(height: 15.0),
-            Center(
-              child: type == 'wrong'
-                  ? const Text(
-                      'Você Errou !!',
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+        content: SizedBox(
+          height: 170,
+          child: Column(
+            children: [
+              Center(
+                child: type == 'wrong'
+                    ? Image.asset(
+                        'assets/images/wrong.png',
+                        height: 50,
+                        width: 50,
+                      )
+                    : Image.asset(
+                        'assets/images/win.png',
+                        height: 50,
+                        width: 50,
                       ),
-                    )
-                  : const Text(
-                      'Você Acertou !!',
-                      style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+              ),
+              const SizedBox(height: 15.0),
+              Center(
+                child: type == 'wrong'
+                    ? const Text(
+                        'Você Errou !!',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    : const Text(
+                        'Você Acertou !!',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-            ),
-            const SizedBox(height: 15.0),
-            Center(
-              child: Text("$point pt"),
-            ),
-          ],
+              ),
+              const SizedBox(height: 15.0),
+              Center(
+                child: Text("$point pt",
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
+                    )),
+              ),
+            ],
+          ),
         ),
       ),
     );
