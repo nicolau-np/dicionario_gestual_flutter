@@ -19,15 +19,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final tipoTextos = Provider.of<TipoTextosProvider>(context).tipo_textos;
-    Icon actionIcon = const Icon(Icons.notifications);
-    Widget appBarTitle = const Text("Dicionário Gestual");
 
     return Scaffold(
       appBar: AppBar(
-        title: appBarTitle,
+        title: const Text('Dicionário Gestual'),
         actions: [
           IconButton(
-            icon: actionIcon,
+            icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
         ],

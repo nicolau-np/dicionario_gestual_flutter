@@ -9,8 +9,8 @@ class CafeApi {
     //base da url
 
     //_dio.options.baseUrl = 'http://127.0.0.1:8000/api';
-    _dio.options.baseUrl = 'https://dicionario.empregofacilitado.com/api';
-
+    _dio.options.baseUrl = 'https://dicionario.ao/api';
+   
     //Configurar headers
   }
 

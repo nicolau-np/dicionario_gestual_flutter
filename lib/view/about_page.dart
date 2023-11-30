@@ -43,7 +43,7 @@ class AboutPage extends StatelessWidget {
                 child: Column(
                   children: const [
                     Text(
-                      'Desenvolvedor: Nicolau Ngala Pungue',
+                      'Desenvolvedor: Esmeralde kumbo Andradre',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
@@ -51,7 +51,7 @@ class AboutPage extends StatelessWidget {
                       height: 6,
                     ),
                     Text(
-                      'Github: nicolau-np',
+                      'Alert Danger Startup',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class AboutPage extends StatelessWidget {
                       height: 6,
                     ),
                     Text(
-                      'LinkedIn: nicolau-np',
+                      'Ano de Lançamento: 2016',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -71,17 +71,16 @@ class AboutPage extends StatelessWidget {
                       height: 6,
                     ),
                     Text(
-                      'Ano de Criação: 2016',
+                      'Ultima Actualização: 2023',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
-                    ),
-                    SizedBox(
+                       SizedBox(
                       height: 6,
                     ),
                     Text(
-                      'Ano da última versão: 2023',
+                      'versão:2.0',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
